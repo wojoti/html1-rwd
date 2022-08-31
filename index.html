@@ -5,25 +5,143 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>OLMO - Bla Bla Bla</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
 </head>
 
 <body>
+  <script>
+    function openNav() {
+      document.getElementById("navbar-mobile").style.width = "100%";
+    }
+
+    function closeNav() {
+      document.getElementById("navbar-mobile").style.width = "0%";
+    }
+
+    var toggleStatusHome = true;
+    function toggleHome() {
+      let theToggle = document.getElementById("navbar-mobile-home-dropdown");
+      switch (toggleStatusHome) {
+        case true:
+          toggleStatusHome = false;
+          document.getElementById("navbar-mobile-home").style.backgroundColor = "lightgrey";
+          document.getElementById("navbar-mobile-home-dropdown").classList.toggle("open"); // wywolanie klasy open ktora daje max-height > niz mozliwa wysokosc listy i pozycjonowanie
+          break;
+        case false:
+          toggleStatusHome = true;
+          document.getElementById("navbar-mobile-home").style.backgroundColor = "white";
+          document.getElementById("navbar-mobile-home-dropdown").classList.toggle("open");
+          break;
+      }
+    }
+
+    var toggleStatusPages = true;
+    function togglePages() {
+      let theToggle = document.getElementById("navbar-mobile-pages-dropdown");
+      switch (toggleStatusPages) {
+        case true:
+          toggleStatusPages = false;
+          document.getElementById("navbar-mobile-pages").style.backgroundColor = "lightgrey";
+          document.getElementById("navbar-mobile-pages-dropdown").classList.toggle("open"); // wywolanie klasy open ktora daje max-height > niz mozliwa wysokosc listy i pozycjonowanie
+          break;
+        case false:
+          toggleStatusPages = true;
+          document.getElementById("navbar-mobile-pages").style.backgroundColor = "white";
+          document.getElementById("navbar-mobile-pages-dropdown").classList.toggle("open");
+          break;
+      }
+    }
+
+
+    var toggleStatusAPages = true;
+    function toggleAPages() {
+      let theToggle = document.getElementById("navbar-mobile-apages-dropdown");
+      switch (toggleStatusAPages) {
+        case true:
+          toggleStatusAPages = false;
+          document.getElementById("navbar-mobile-apages").style.backgroundColor = "lightgrey";
+          document.getElementById("navbar-mobile-apages-dropdown").classList.toggle("open"); // wywolanie klasy open ktora daje max-height > niz mozliwa wysokosc listy i pozycjonowanie
+          break;
+        case false:
+          toggleStatusAPages = true;
+          document.getElementById("navbar-mobile-apages").style.backgroundColor = "white";
+          document.getElementById("navbar-mobile-apages-dropdown").classList.toggle("open");
+          break;
+      }
+    }
+
+  </script>
+
+  <div id="navbar-mobile" class="navbar-mobile-overlay">
+    <div class="navbar-mobile-top">
+      <a href="javascript:void(0)" class="navbar-mobile-top--close-btn" onclick="closeNav()">&times;</a>
+    </div>
+    <div class="navbar-mobile-list-div">
+      <ul class="navbar-mobile-items--ul">
+        <li id="navbar-mobile-home" class="navbar-mobile-items--li" onclick="toggleHome()">
+          <a href="#" class="navbar-mobile-items--li-a">Home</a><i class="fa fa-caret-down"></i>
+        </li>
+        <ul id="navbar-mobile-home-dropdown" class="navbar-mobile-items--ul">
+          <li class="navbar-mobile-dropdown--li"><a href="#">App Landing</a></li>
+          <li class="navbar-mobile-dropdown--li"><a href="#">App Showcase 1</a></li>
+          <li class="navbar-mobile-dropdown--li"><a href="#">Startup Agency</a></li>
+          <li class="navbar-mobile-dropdown--li"><a href="#">Design Agency</a></li>
+          <li class="navbar-mobile-dropdown--li"><a href="#">Software 1</a></li>
+          <li class="navbar-mobile-dropdown--li"><a href="#">SaaS Service 1</a></li>
+          <li class="navbar-mobile-dropdown--li"><a href="#">Digital Service 1</a></li>
+          <li class="navbar-mobile-dropdown--li"><a href="#">Social Media Marketing</a></li>
+          <li class="navbar-mobile-dropdown--li"><a href="#">Digital Agency</a></li>
+          <li class="navbar-mobile-dropdown--li"><a href="#">SaaS Service 2</a></li>
+          <li class="navbar-mobile-dropdown--li"><a href="#">Desktop Software 1</a></li>
+          <li class="navbar-mobile-dropdown--li"><a href="#">Digital Service 2</a></li>
+          <li class="navbar-mobile-dropdown--li"><a href="#">Software SaaS</a></li>
+          <li class="navbar-mobile-dropdown--li"><a href="#">App Showcase 2</a></li>
+          <li class="navbar-mobile-dropdown--li"><a href="#">Software 2</a></li>
+          <li class="navbar-mobile-dropdown--li"><a href="#">App Showcase 3</a></li>
+          <li class="navbar-mobile-dropdown--li"><a href="#">Desktop Software 2</a></li>
+          <li class="navbar-mobile-dropdown--li"><a href="#">SEO Company</a></li>
+          <li class="navbar-mobile-dropdown--li"><a href="#">Digital Marketing</a></li>
+          <li class="navbar-mobile-dropdown--li"><a href="#">Cyber Security</a></li>
+          <li class="navbar-mobile-dropdown--li"><a href="#">SaaS Service 3</a></li>
+          <li class="navbar-mobile-dropdown--li"><a href="#">Marketing Agency</a></li>
+          <li class="navbar-mobile-dropdown--li"><a href="#">Branding Agency</a></li>
+          <li class="navbar-mobile-dropdown--li"><a href="#">Page</a></li>
+          <li class="navbar-mobile-dropdown--li"><a href="#">RTL Version #1</a></li>
+          <li class="navbar-mobile-dropdown--li"><a href="#">RTL Version #2</a></li>
+          <li class="navbar-mobile-dropdown--li"><a href="#">RTL Version #3</a></li>
+        </ul>
+
+        <li class="navbar-mobile-items--li"><a href="#" class="navbar-mobile-items--li-a">About</a></li>
+        <li class="navbar-mobile-items--li">
+          <a href="#" class="navbar-mobile-items--li-a">Pages </a><i class="fa fa-caret-down"></i>
+        </li>
+        <li class="navbar-mobile-items--li">
+          <a href="#" class="navbar-mobile-items--li-a">Auth Pages </a><i class="fa fa-caret-down"></i>
+        </li>
+        <li class="navbar-mobile-items--li"><a href="#" class="navbar-mobile-items--li-a">Features</a></li>
+        <li class="navbar-mobile-items--li"><a href="#" class="navbar-mobile-items--li-a">FAQs</a></li>
+        <li class="navbar-mobile-items--li navbar-mobile-items--li-special"><a href="#"
+            class="navbar-mobile-items--li-a navbar-mobile-items--li-a-special">Try For Free</a></li>
+      </ul>
+    </div>
+  </div>
+
   <div class="navbar">
     <div class="navbar-sizer">
       <img src="img/logo1.png" alt="Website logo" class="navbar-logo" />
       <div class="navbar-items show-full-elements">
         <ul class="navbar-items--ul">
-          <li class="navbar-items--li"><a href="#">Home ▼</a></li>
+          <li class="navbar-items--li"><a href="#">Home<i class="fa fa-caret-down"></i></a></li>
           <li class="navbar-items--li"><a href="#">About</a></li>
-          <li class="navbar-items--li"><a href="#">Pages ▼</a></li>
-          <li class="navbar-items--li"><a href="#">Auth Pages ▼</a></li>
+          <li class="navbar-items--li"><a href="#">Pages <i class="fa fa-caret-down"></i></a></li>
+          <li class="navbar-items--li"><a href="#">Auth Pages <i class="fa fa-caret-down"></i></a></li>
           <li class="navbar-items--li"><a href="#">Features</a></li>
           <li class="navbar-items--li"><a href="#">FAQs</a></li>
           <li><button type="button" class="navbar-items--btn">Try For Free</button></li>
         </ul>
       </div>
-      <div class="navbar-items hide-full-elements">🍔</div>
+      <div class="navbar-items hide-full-elements"><i class="fa fa-bars fa-2x" onclick="openNav()"></i></div>
     </div>
   </div>
 
